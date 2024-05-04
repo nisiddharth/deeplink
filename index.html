@@ -7,7 +7,7 @@
     <meta name="description" content="Test Android/ iOS deep links" />
     <meta name="author" content="Nishchal Siddharth" />
     <meta name="keywords"
-        content="deep link,deeplink,deeplink tester,tester,android,android studio,xcode,iOS,iPad,iPhone,Samsung,URL,URI" />
+        content="deep link,deeplink,deeplink tester,universal link,universal,tester,android,android studio,xcode,iOS,iPad,iPhone,Samsung,URL,URI" />
     <meta name=" image" content="https://nishchal.one/deeplink/deeplink-full" />
 
     <!-- Open Graph / Facebook -->
@@ -48,7 +48,32 @@
         <br>
         <div class="history" id="history-div">
             <h2>Recents <span>[tap item to edit]</span></h2>
-            <ul id="history-list"></ul>
+            <ul id="history-list" class="history-list"></ul>
+        </div>
+        <br>
+        <br>
+        <button id="copy-button" onclick="copyPageUrl()"><i class="fa-regular fa-copy"></i> Copy a link to this page
+            with deep link</button>
+        <br>
+        <br>
+        <div class="deeplink-info">
+            <h2>What's a deep link</h2>
+            <p>
+                In the context of mobile apps, deep linking consists of using a URL that links to a specific location
+                within a mobile app rather than simply launching the app. In your app, you would need to create a URL
+                schema so that your app system will know what to do.
+                <br><br>
+                E.g., For the <a href="https://www.phonepe.com/" target="_blank">PhonePe</a> app, the URL schema is
+                <b><i>phonepe://</i></b>
+            </p>
+            <ul>
+                <li>Read the wiki: <a href="https://en.wikipedia.org/wiki/Mobile_deep_linking" target="_blank">here</a>
+                </li>
+                <li>Android deep link creations: <a href="https://developer.android.com/training/app-links/deep-linking"
+                        target="_blank">here</a></li>
+                <li>iOS (called Universal Links): <a href="https://developer.apple.com/ios/universal-links/"
+                        target="_blank">here</a></li>
+            </ul>
         </div>
     </div>
 

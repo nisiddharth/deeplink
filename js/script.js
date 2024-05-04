@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Fill in any URL if present in URL param
+    const params = new URLSearchParams(document.location.search);
+    const link = params.get("link");
+    if (link) {
+        document.getElementById("deeplink-input").value = link;
+    }
     // Load history from localStorage
     loadHistory();
     document.getElementById("deeplink-input").focus()
@@ -30,7 +36,8 @@ function triggerDeepLink() {
 }
 
 function addToHistory(link) {
-    document.getElementById("history-div").style.visibility = "visible"
+    document.getElementById("history-div").style.display = "block"
+    document.getElementById("copy-button").style.display = "block"
     var historyList = document.getElementById("history-list");
 
     // Remove all occurrences of the link from the history list
@@ -43,6 +50,7 @@ function addToHistory(link) {
 
     var listItem = document.createElement("li");
     listItem.classList.add("flex")
+    listItem.classList.add("history-item")
 
     var listText = document.createElement("p");
     listText.classList.add("ellipsis")
@@ -102,42 +110,21 @@ function loadHistory() {
             });
         });
     } else {
-        document.getElementById("history-div").style.visibility = "hidden"
+        document.getElementById("history-div").style.display = "none"
+        document.getElementById("copy-button").style.display = "none"
     }
 }
 
 function launchDeepLink(deepLink) {
-    // Check if the user is on an Android device
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (/android/i.test(userAgent)) {
-        launchAndroidDeepLink(deepLink);
-    }
-    // Check if the user is on an iOS device
-    else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        launchiOSDeepLink(deepLink);
-    }
-    // For other devices or desktop, simply navigate to the deep link
-    else {
-        window.open(deepLink);
-    }
-}
-
-
-function launchAndroidDeepLink(deepLink) {
-    var iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    iframe.src = deepLink;
-    document.body.appendChild(iframe);
-    setTimeout(function () {
-        document.body.removeChild(iframe);
-    }, 500);
-}
-
-
-function launchiOSDeepLink(deepLink) {
     window.open(deepLink);
-    setTimeout(function () {
-        // If the deep link doesn't work, redirect to the App Store
-        window.location.href = "https://apps.apple.com/us/app/your-app-name/id1234567890";
-    }, 1000); // Adjust the delay as needed
+}
+
+function copyPageUrl() {
+    var link = document.getElementById("deeplink-input").value;
+    if (link) {
+        var url = document.location.href.split('?')[0] + "?link=" + link
+        navigator.clipboard.writeText(url);
+
+        document.getElementById("copy-button").innerHTML = 'Copied! <i class="fa-solid fa-seedling"></i>'
+    }
 }

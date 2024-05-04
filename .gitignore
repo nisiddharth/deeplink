@@ -1,0 +1,12 @@
+node_modules
+.parcel-cache
+dist
+public
+
+# VSCode files
+**/.vscode
+**/.output
+
+# Miscellaneous
+**/.directory
+**/desktop.ini

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Test Android/ iOS deep links" />
+    <meta name="author" content="Nishchal Siddharth" />
+    <meta name="keywords"
+        content="deep link,deeplink,deeplink tester,tester,android,android studio,xcode,iOS,iPad,iPhone,Samsung,URL,URI" />
+    <meta name=" image" content="https://nishchal.one/deeplink/deeplink-full" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nishchal.one/deeplink/">
+    <meta property="og:title" content="Deep Link Tester">
+    <meta property="og:description" content="ITest Android/ iOS deep links">
+    <meta property="og:image" content="https://nishchal.one/deeplink/deeplink-full">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="Test Android/ iOS deep links">
+    <meta property="twitter:creator" content="@nisiddharth">
+    <meta property="twitter:title" content="Nishchal Siddharth">
+    <meta property="twitter:description" content="Test Android/ iOS deep links">
+    <meta property="twitter:image" content="https://nishchal.one/deeplink/deeplink-full.png">
+
+    <title>Deep Link Tester</title>
+    <link rel="icon" href="./deeplink.png" />
+    <style>
+        tbody td:first-child {
+            min-width: 2em;
+            max-width: 2em;
+        }
+    </style>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1><i class="fa-solid fa-link"></i> Deep Link Tester</h1>
+        <div class="flex-wrap">
+            <input style="flex-grow: 1" type="text" id="deeplink-input" placeholder="Enter deeplink URL" />
+            <button onclick="triggerDeepLink()"><i class="fa-solid fa-rocket"></i> Launch</button>
+        </div>
+        <br>
+        <br>
+        <div class="history" id="history-div">
+            <h2>Recents <span>[tap item to edit]</span></h2>
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+
+            <br><br><br>
+            <hr>
+            Made by <a href="https://nishchal.one/" target="_blank">Nishchal Siddharth</a> with <i
+                class="fa-solid fa-heart"></i>. May 2024
+            <br>
+            <p class="m-0 text-center"><i>Enlightenment leads to benightedness; Science entails nescience.</i></p>
+            <br>
+            <br>
+            <div class="extra-small-text">
+                <p><b>Privacy Statement: </b>This website doesn't track the links you enter here. No telemetry
+                    whatsover.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
